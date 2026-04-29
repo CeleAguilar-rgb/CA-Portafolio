@@ -1,23 +1,49 @@
 import { Reveal } from "./Reveal";
-const techStack = [
-  { name: "HTML", icon: "assets/icons/html.png" },
-  { name: "CSS", icon: "assets/icons/css.png" },
-  { name: "JavaScript", icon: "assets/icons/js.png" },
-  { name: "React", icon: "assets/icons/react.png" },
-  { name: "Git", icon: "assets/icons/github.png" },
-  { name: "Figma", icon: "assets/icons/figma.png" },
+
+import { FaReact, FaLaravel, FaCss3Alt, FaFigma } from "react-icons/fa";
+import {
+  SiPrisma,
+  SiBlender,
+  SiUnrealengine,
+  SiJavascript,
+} from "react-icons/si";
+
+const techGroups = [
+  {
+    category: "Web Development",
+    skills: [
+      { name: "React", icon: <FaReact /> },
+      { name: "Laravel", icon: <FaLaravel /> },
+      { name: "Node/Prisma", icon: <SiPrisma /> },
+      { name: "Modular CSS", icon: <FaCss3Alt /> },
+    ],
+  },
+  {
+    category: "3D & Creative",
+    skills: [
+      { name: "Blender", icon: <SiBlender /> },
+      { name: "Unreal Engine", icon: <SiUnrealengine /> },
+      { name: "Figma", icon: <FaFigma /> },
+      { name: "Illustration", icon: <SiJavascript /> },
+    ],
+  },
 ];
 
 const experience = [
   {
-    date: "2023 — Present",
-    title: "Overwatch Pro Player",
-    desc: "Jugar over to lo dia- Road to fucking maste madafaker",
+    date: "2024 — Present",
+    title: "Lead Developer - Expo LMAD System",
+    desc: "Designed and implemented a fullstack administrative dashboard and a real-time QR attendance system for academic exhibitions using Laravel and Vite.",
   },
   {
-    date: "2021 — 2023",
-    title: "Web Development Intern",
-    desc: "Built responsive websites and interactive features for clients.",
+    date: "2023 — 2024",
+    title: "Fullstack Web Collaborator",
+    desc: "Collaborated on the logic and database structure for interactive web applications, focusing on API integration and responsive design with React and Prisma.",
+  },
+  {
+    date: "2023 — Present",
+    title: "3D Artist & Character Designer",
+    desc: "Created original 3D characters and assets, handling the full pipeline from concept art to modeling in Blender and animation logic in Unreal Engine 5.6.",
   },
 ];
 
@@ -27,9 +53,7 @@ export function About() {
       <Reveal>
         <div className="about-inner">
           <div className="about-grid">
-            {/* COLUMNA IZQUIERDA */}
             <div className="left-column">
-              {/* CARD ABOUT */}
               <div className="card about-card">
                 <div className="about-text">
                   <h2>// about_me()</h2>
@@ -37,11 +61,9 @@ export function About() {
                     I am a Multimedia and Digital Animation student and a Junior
                     Fullstack Developer. My work is driven by the balance
                     between technical logic and visual aesthetics. While I
-                    specialize in building robust web applications with Laravel
-                    and React, I am also a 3D Artist passionate
-                    about character design and visual storytelling. I focus on
-                    creating digital experiences that are as intentional as they
-                    are functional.
+                    specialize in building web applications with Laravel and
+                    React, I am also a 3D Artist passionate about character
+                    design and storytelling.
                   </p>
                 </div>
                 <div className="about-image">
@@ -49,21 +71,26 @@ export function About() {
                 </div>
               </div>
 
-              {/* CARD TECH STACK */}
               <div className="card tech-card">
                 <h2>&gt; tech_stack[]</h2>
-                <div className="tech-list">
-                  {techStack.map((tech, index) => (
-                    <span className="tech-item" key={index}>
-                      <img src={tech.icon} alt={tech.name} />
-                      {tech.name}
-                    </span>
+                <div className="tech-container">
+                  {techGroups.map((group, i) => (
+                    <div className="tech-group" key={i}>
+                      <h4 className="tech-group-title">{group.category}</h4>
+                      <div className="tech-list">
+                        {group.skills.map((skill, index) => (
+                          <span className="tech-item" key={index}>
+                            <span className="tech-icon">{skill.icon}</span>
+                            {skill.name}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   ))}
                 </div>
               </div>
             </div>
 
-            {/* COLUMNA DERECHA*/}
             <div className="right-column">
               <div className="card projects-card">
                 <h2>&gt; experience[]</h2>
@@ -76,6 +103,7 @@ export function About() {
                 ))}
               </div>
             </div>
+            
           </div>
         </div>
       </Reveal>

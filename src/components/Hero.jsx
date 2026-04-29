@@ -43,7 +43,7 @@ export function Hero() {
             </p>
 
             <div className="hero-buttons">
-              <a href="#projects" className="btn btn-pri">
+              <a href="#projects-section" className="btn btn-pri">
                 View Projects
               </a>
               <a href="#contact" className="btn btn-out">

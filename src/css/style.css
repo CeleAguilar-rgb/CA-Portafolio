@@ -76,7 +76,7 @@ body::before {
   top: 0;
   width: 100%;
   z-index: 1000;
-  background:rgba(29, 64, 139, 0.1);
+  background: rgba(29, 64, 139, 0.1);
   backdrop-filter: blur(10px);
 }
 .nav {
@@ -261,8 +261,8 @@ body::before {
   backface-visibility: hidden;
   -webkit-font-smoothing: subpixel-antialiased;
 
-  animation: 
-    blurIn 1s ease-out forwards, 
+  animation:
+    blurIn 1s ease-out forwards,
     floating 4s ease-in-out infinite 1s;
 }
 .monitor-top {
@@ -408,9 +408,25 @@ body::before {
 .tech-card h2 {
   /*position: relative;
   margin-top: -10px;*/
-  margin-bottom: 0.8rem;
+  margin-bottom: -0.2rem;
   color: var(--pri-l);
   z-index: 1;
+}
+
+.tech-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.tech-group-title {
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: var(--pri);
+  opacity: 0.6;
+  margin-bottom: 0.8rem;
+  text-transform: lowercase;
 }
 
 .tech-list {
@@ -422,33 +438,32 @@ body::before {
 .tech-item {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-
-  padding: 8px 18px;
+  gap: 0.6rem;
+  padding: 8px 16px;
   border-radius: 20px;
-
-  background: rgba(208, 197, 244, 0.3);
-
+  background: rgba(208, 197, 244, 0.253);
+  color: var(--pri);
   font-size: 0.85rem;
   font-weight: 500;
-
-  transition: var(--tr);
-}
-.tech-item img {
-  width: 20px;
-  height: 20px;
-}
-.tech-item img {
-  transition: transform var(--tr);
+  transition: all 0.3s ease;
+  cursor: default;
 }
 
-.tech-item:hover img {
-  transform: scale(1.1);
+.tech-icon {
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
 }
+
 .tech-item:hover {
+  background: var(--pri);
+  color: #ffffff;
   transform: translateY(-2px);
-  background: var(--pri-l);
-  color: var(--txt-inv);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tech-item:hover .tech-icon {
+  color: #ffffff;
 }
 
 .projects-card {
@@ -731,9 +746,8 @@ body::before {
 .contact {
   background: var(--bg);
   color: var(--txt);
-  padding: 120px 60px;
+  padding: 180px 60px;
 }
-
 .contact-inner {
   max-width: 1050px;
   margin: 0 auto;
@@ -743,15 +757,12 @@ body::before {
   gap: 4rem;
   align-items: center;
 }
-
-/* LEFT */
 .contact-label {
   font-family: monospace;
   font-size: 0.8rem;
   color: var(--pri);
   margin-bottom: 1rem;
 }
-
 .contact-title {
   font-family: var(--ft-title);
   color: var(--pri);
@@ -759,7 +770,6 @@ body::before {
   line-height: 1.2;
   margin-bottom: 1.2rem;
 }
-
 .contact-text {
   color: var(--pri-l);
   max-width: 400px;
@@ -767,15 +777,18 @@ body::before {
   opacity: 0.8;
 }
 
-/* RIGHT CARD */
+
 .contact-card {
   background: var(--bg-light);
   color: var(--txt);
   border-radius: var(--r-lg);
   box-shadow: var(--sh-strong);
   overflow: hidden;
+  transition:var(--tr);
 }
-
+.contact-card:hover {
+  transform: translateY(-4px);
+}
 .contact-card-header {
   display: flex;
   justify-content: space-between;
@@ -788,13 +801,10 @@ body::before {
   font-size: 0.75rem;
   opacity: 0.7;
 }
-
-/* dots reutilizables */
 .dots {
   display: flex;
   gap: 4px;
 }
-
 .dots span {
   width: 7px;
   height: 7px;
@@ -802,20 +812,13 @@ body::before {
   border-radius: 50%;
   opacity: 0.6;
 }
-
-/* BODY */
-
 .contact-card-body {
   padding: 1.5rem;
 }
-
 .contact-email {
   font-weight: 600;
   margin-bottom: 1rem;
 }
-
-/* CTA estilo link (como tus projects) */
-
 .contact-cta {
   display: inline-block;
   margin-bottom: 1.5rem;
@@ -825,7 +828,6 @@ body::before {
   color: var(--pri);
   position: relative;
 }
-
 .contact-cta::after {
   content: "";
   position: absolute;
@@ -836,27 +838,29 @@ body::before {
   background: var(--pri);
   transition: width var(--tr);
 }
-
 .contact-cta:hover::after {
   width: 100%;
 }
 
-/* SOCIALS */
-
 .contact-socials {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+  align-items: center;
 }
-
 .contact-socials a {
-  text-decoration: none;
-  font-size: 0.8rem;
-  opacity: 0.6;
-  transition: var(--tr);
+  font-size: 1.2rem; 
+  color: var(--pri);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
 .contact-socials a:hover {
   opacity: 1;
+  color: var(--pri-l); 
+  transform: translateY(-3px);
 }
 
 /* ===== MODAL BASE ===== */
@@ -869,8 +873,6 @@ body::before {
   justify-content: center;
   z-index: 2000;
 }
-
-/* MODAL */
 .modal {
   width: 900px;
   max-width: 95%;
@@ -882,10 +884,8 @@ body::before {
   overflow-y: auto;
   box-shadow: var(--sh-strong);
   transition: 1s ease-out;
-    animation: modalEntry 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: modalEntry 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-
-/* HEADER */
 .modal-header {
   display: flex;
   justify-content: space-between;
@@ -896,7 +896,6 @@ body::before {
   font-size: 0.75rem;
   color: var(--pri);
 }
-
 .modal-close {
   background: none;
   border: none;
@@ -905,7 +904,6 @@ body::before {
   cursor: pointer;
 }
 
-/* GALERÍA */
 .modal-gallery {
   position: relative;
   height: 380px;
@@ -915,13 +913,11 @@ body::before {
   align-items: center;
   justify-content: center;
 }
-
 .modal-media {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
 .modal-nav {
   position: absolute;
   color: var(--pri);
@@ -932,7 +928,6 @@ body::before {
   border-radius: 50%;
   cursor: pointer;
 }
-
 .modal-nav:hover {
   background: var(--pri);
   color: var(--txt-inv);
@@ -944,7 +939,6 @@ body::before {
 .next {
   right: 20px;
 }
-
 .modal-dots {
   position: absolute;
   bottom: 12px;
@@ -953,7 +947,6 @@ body::before {
   display: flex;
   gap: 6px;
 }
-
 .dot {
   width: 8px;
   height: 8px;
@@ -962,27 +955,22 @@ body::before {
   background: rgba(255, 255, 255, 0.4);
   transition: var(--tr);
 }
-
 .dot.active {
   background: var(--pri-l);
   transform: scale(1.2);
 }
 
-/* BODY */
 .modal-body {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 2rem;
   padding: 2rem;
 }
-
-/* MAIN */
 .modal-title {
   font-size: 1.6rem;
   color: var(--pri);
   margin-bottom: 0.8rem;
 }
-
 .modal-description {
   font-size: 0.95rem;
   line-height: 1.6;
@@ -990,13 +978,11 @@ body::before {
   margin-bottom: 1rem;
 }
 
-/* TECH */
 .modal-tech {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
 }
-
 .tag {
   display: flex;
   align-items: center;
@@ -1014,13 +1000,11 @@ body::before {
   backdrop-filter: blur(6px);
   transition: var(--tr);
 }
-
 .tag img {
   width: 14px;
   height: 14px;
   object-fit: contain;
 }
-
 .tag:hover {
   transform: translateY(-2px);
   background: var(--pri-l);
@@ -1041,14 +1025,11 @@ body::before {
   letter-spacing: 0.5px;
   transition: var(--tr);
 }
-
 .modal-tech span:hover {
   background: var(--pri-l);
   color: var(--txt-inv);
   transform: translateY(-2px);
 }
-
-/* SIDE INFO */
 .modal-side p {
   font-size: 0.85rem;
   opacity: 0.7;
@@ -1070,7 +1051,6 @@ body::before {
   margin-bottom: 4px;
   opacity: 0.6;
 }
-
 .side-item p {
   font-size: 0.9rem;
   font-weight: 600;
@@ -1078,14 +1058,12 @@ body::before {
   opacity: 1;
 }
 
-/* FOOTER */
 .modal-footer {
   display: flex;
   justify-content: space-between;
   padding: 1.2rem 2rem;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
-
 .modal-live {
   font-weight: 600;
   font-size: 1rem;
@@ -1094,7 +1072,6 @@ body::before {
   position: relative;
   transition: var(--tr);
 }
-
 .modal-live::after {
   content: "";
   position: absolute;
@@ -1105,7 +1082,6 @@ body::before {
   background: var(--pri);
   transition: width var(--tr);
 }
-
 .modal-live:hover::after {
   width: 100%;
 }
@@ -1120,10 +1096,8 @@ body::before {
   text-decoration: none;
   transition: all var(--tr);
 }
-
 .modal-repo:hover {
   background: var(--pri-l);
   color: white;
   box-shadow: 0 5px 15px rgba(39, 108, 228, 0.3);
 }
-
