@@ -4,8 +4,8 @@ export function Navbar() {
     <header className="header animate-fade-down">
       <nav className="nav container">
         <div className="brand">
-          <span className="brand-title">Portafolio</span>
-          <span className="brand-name">Celeste</span>
+          <span className="brand-title"><a href="#hero">Portafolio</a></span>
+          <span className="brand-name"><a href="#hero">Celeste</a></span>
         </div>
 
         <ul className="nav-list">
