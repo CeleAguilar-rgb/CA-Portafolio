@@ -1,7 +1,9 @@
+import { Reveal } from "./Reveal";
 
 export function Contact() {
   return (
     <section id="contact" className="contact">
+      <Reveal>
       <div className="contact-inner">
         {/* PARTE IZQUIERDA: Texto */}
         <div className="contact-left">
@@ -44,6 +46,7 @@ export function Contact() {
           </div>
         </div>
       </div>
+      </Reveal>
     </section>
   );
 }

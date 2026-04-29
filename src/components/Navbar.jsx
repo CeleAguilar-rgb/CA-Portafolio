@@ -1,7 +1,7 @@
 
 export function Navbar() {
   return (
-    <header className="header">
+    <header className="header animate-fade-down">
       <nav className="nav container">
         <div className="brand">
           <span className="brand-title">Portafolio</span>

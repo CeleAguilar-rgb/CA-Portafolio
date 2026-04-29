@@ -2,7 +2,7 @@
 export function Modal({ project, onClose }) {
   return (
     <div className="modal-overlay" onClick={onClose} style={{ display: 'flex' }}>
-      {/* El stopPropagation evita que al hacer click dentro del modal se cierre */}
+    
       <div className="modal" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
           <p>&gt; project_details</p>

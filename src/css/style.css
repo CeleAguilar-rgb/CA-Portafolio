@@ -1,4 +1,4 @@
-@import "./theme.css";
+@import "../css/theme.css";
 
 /* ===== RESET ===== */
 * {
@@ -76,7 +76,7 @@ body::before {
   top: 0;
   width: 100%;
   z-index: 1000;
-  background: transparent;
+  background:rgba(29, 64, 139, 0.1);
   backdrop-filter: blur(10px);
 }
 .nav {
@@ -200,6 +200,7 @@ body::before {
 .hero-left {
   max-width: 600px;
   transform: translateY(-10px);
+  animation: fadeInUp 0.8s ease-out forwards;
 }
 
 .hero-right {
@@ -239,6 +240,9 @@ body::before {
 .hero-buttons {
   display: flex;
   gap: 1.5rem;
+  opacity: 0;
+  animation: softPop 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  animation-delay: 0.5s;
 }
 
 /*-Monitor-*/
@@ -256,6 +260,10 @@ body::before {
   will-change: transform;
   backface-visibility: hidden;
   -webkit-font-smoothing: subpixel-antialiased;
+
+  animation: 
+    blurIn 1s ease-out forwards, 
+    floating 4s ease-in-out infinite 1s;
 }
 .monitor-top {
   background: var(--bg-alt);
@@ -292,6 +300,7 @@ body::before {
 }
 
 /* ===== ABOUT ===== */
+
 #about-section {
   background: var(--bg);
   padding: 120px 60px;
@@ -872,6 +881,8 @@ body::before {
   flex-direction: column;
   overflow-y: auto;
   box-shadow: var(--sh-strong);
+  transition: 1s ease-out;
+    animation: modalEntry 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* HEADER */
@@ -1115,3 +1126,4 @@ body::before {
   color: white;
   box-shadow: 0 5px 15px rgba(39, 108, 228, 0.3);
 }
+
