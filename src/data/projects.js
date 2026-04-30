@@ -1,42 +1,24 @@
 export const projectsData = [
   {
     id: 1,
-    title: "Expo LMAD System",
-    description:
-      "A fullstack management system with QR attendance and administrative dashboards for academic events.",
-    image: "/assets/projects/expo-lmad.jpg",
-    tech: ["Laravel", "Vite", "MySQL"],
-    link: "#",
-    repo: "#",
-  },
-  {
-    id: 2,
     title: "MiauChat",
-    description:
-      "A real-time communication platform featuring P2P video calls and instant messaging built with WebRTC and Socket.io.",
-    image: "/assets/projects/MiauChat.png",
-    tech: ["React", "Socket.io", "Firebase"],
-    link: "#",
-    repo: "https://github.com/MadMax2808/miauchat2.0.git",
-  },
-  {
-    id: 3,
-    title: "Pixplore",
-    description:
-      "A Pinterest-inspired social platform for discovering and organizing digital art.",
-    image: "/assets/projects/Pixplore.png",
-    tech: ["React", "Prisma", "Modular CSS"],
-    link: "#",
-    repo: "https://github.com/tu-usuario/pixplore",
-  },
-  {
-    id: 4,
-    title: "Lunaria (Coming Soon)",
-    description:
-      "An aesthetic reading tracker with Spotify integration and focus on calm-tech user experience.",
-    image: "/assets/projects/lunaria-preview.jpg",
-    tech: ["React", "Firebase", "Spotify API"],
+    media: [
+      { type: "image", url: "/assets/projects/MiauChat.png" },
+      { type: "video", url: "/assets/projects/miau-demo.mp4" },
+      { type: "image", url: "/assets/projects/miau-2.jpg" },
+    ],
+    role: "Lead Developer",
+    year: "2026",
+    description: "Detailed explanation of the project...",
+    tech: ["React", "WebRTC", "Socket.io"],
     link: "#",
     repo: "#",
+    challenge:
+      "Optimización de la carga de modelos 3D pesados sin afectar el rendimiento del navegador.",
+    features: [
+      "Interfaz drag-and-drop",
+      "Exportación en tiempo real",
+      "Sistema de nodos personalizado",
+    ],
   },
 ];

@@ -7,7 +7,7 @@ export function ProjectCard({ project, onClick }) {
       </div>
 
       <div className="project-image">
-        <img src={project.image} alt={project.title} />
+        <img src={project.media[0].url} alt={project.title} />
       </div>
 
       <div className="project-content">

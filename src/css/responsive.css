@@ -1,5 +1,6 @@
 /* ===== TABLET / LAPTOP ===== */
 @media (max-width: 1024px) {
+    
   .nav {
     padding: 1rem 1.5rem;
   }
@@ -12,6 +13,12 @@
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+  }
+  .hero-inner {
+    margin-bottom: -2rem;
+  }
+   .card h2{
+    font-size: 1.6rem;
   }
 }
 
@@ -62,16 +69,44 @@
     margin: 0 auto 2rem;
   }
 
+ .modal {
+    width: 95%;
+    height: 90vh;
+    max-height: 90vh;
+  }
   .modal-body {
     grid-template-columns: 1fr;
-    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; 
+  }
+  .modal-gallery {
+    height: 250px; 
+    min-height: 250px;
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  .modal-info {
+    overflow: visible;
+    border-left: none;
   }
 
-  .modal-side {
-    border-left: none;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 1.5rem 0 0 0;
+  .info-scroll {
+    overflow: visible;
+    padding: 1.5rem;
   }
+  .nav-btn {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .nav-btn.prev { left: 10px; }
+  .nav-btn.next { right: 10px; }
+
+  .modal-title {
+    font-size: 1.5rem;
+  }
+
 }
 
 /* ===== PHONES (900px a 650px) ===== */
@@ -80,17 +115,18 @@
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
+ 
   .about-card {
     flex-direction: column-reverse;
-    text-align: center; 
+    text-align: center;
   }
   .about-image img {
     width: 130px;
     height: 130px;
     margin-bottom: 1rem;
   }
-  .tech-card{
-     text-align: center;
+  .tech-card {
+    text-align: center;
   }
   .tech-list {
     justify-content: center;
