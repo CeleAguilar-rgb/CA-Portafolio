@@ -16,6 +16,7 @@ const techGroups = [
       { name: "Laravel", icon: <FaLaravel /> },
       { name: "Node/Prisma", icon: <SiPrisma /> },
       { name: "Modular CSS", icon: <FaCss3Alt /> },
+       { name: "JavaScript", icon: <SiJavascript /> },
     ],
   },
   {
@@ -24,7 +25,7 @@ const techGroups = [
       { name: "Blender", icon: <SiBlender /> },
       { name: "Unreal Engine", icon: <SiUnrealengine /> },
       { name: "Figma", icon: <FaFigma /> },
-      { name: "Illustration", icon: <SiJavascript /> },
+     
     ],
   },
 ];

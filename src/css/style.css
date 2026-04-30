@@ -900,7 +900,8 @@ a {
 }
 
 .modal-gallery {
-  background: #0a0a0a;
+ background: rgba(29, 64, 139, 0.1);
+  backdrop-filter: blur(10px);
   position: relative;
   display: flex;
   align-items: center;
@@ -1151,3 +1152,4 @@ a {
   color: var(--pri);
   font-weight: bold;
 }
+

@@ -10,8 +10,9 @@ import { Projects } from "./components/Projects";
 import { Contact } from "./components/Contact";
 import { Modal } from "./components/Modal";
 
-
 function App() {
+  const [lang, setLang] = useState("es");
+
   const [count, setCount] = useState(0);
 
   const [selectedProject, setSelectedProject] = useState(null);
@@ -21,8 +22,8 @@ function App() {
 
   return (
     <>
-      <Navbar />
-      <Hero />
+      <Navbar lang={lang} setLang={setLang} />
+      <Hero lang={lang} />
       <About />
       <Projects onProjectClick={openModal} />
       <Contact />

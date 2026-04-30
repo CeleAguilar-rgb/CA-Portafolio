@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Reveal } from "./Reveal";
+import { translations } from "../data/translations.js";
+
 export function useTypewriter(text, speed = 50) {
   const [displayedText, setDisplayedText] = useState("");
 
@@ -19,35 +21,37 @@ export function useTypewriter(text, speed = 50) {
   return displayedText;
 }
 
-export function Hero() {
-  const line1 = useTypewriter("Celeste Aguilar Lara", 20);
-  const line2 = useTypewriter("Fullstack Developer & 3D Artist", 30);
-  const line3 = useTypewriter("Aesthetic UI & Visual Storytelling", 40);
-  const line4 = useTypewriter("Coding & creating daily", 50);
+export function Hero({ lang }) {
+
+  const t = translations[lang].hero;
+
+  const line1 = useTypewriter(t.monitor.line1, 20);
+  const line2 = useTypewriter(t.monitor.line2, 30);
+  const line3 = useTypewriter(t.monitor.line3, 40);
+  const line4 = useTypewriter(t.monitor.line4, 50);
 
   return (
     <section id="hero" className="hero ">
       <div className="hero-inner">
         <Reveal>
           <div className="hero-left">
-            <p className="hero-sub">// fullstack dev & artist portfolio</p>
+            <p className="hero-sub">{t.sub}</p>
             <h1 className="hero-title">
-              Hi, I'm <span>Cele</span>
+             {t.hi} <span>Cele</span>
             </h1>
             <h2 className="hero-role">
-              Junior Fullstack Developer | 3D Artist
+             {t.role}
             </h2>
             <p className="hero-description">
-              Building robust and aesthetic fullstack applications while
-              exploring the world of 3D modeling and digital illustration.
+           {t.description}
             </p>
 
             <div className="hero-buttons">
               <a href="#projects-section" className="btn btn-pri">
-                View Projects
+              {t.btnProjects}
               </a>
               <a href="#contact" className="btn btn-out">
-                Contact Me
+               {t.btnContact}
               </a>
             </div>
           </div>
