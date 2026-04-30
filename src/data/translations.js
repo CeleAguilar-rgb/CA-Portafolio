@@ -28,7 +28,7 @@ export const translations = {
     about: {
       title: "// sobre_mí()",
       description:
-        "Soy estudiante de Multimedia y Animación Digital en la U.A.N.L. y Desarrolladora Junior Fullstack. Mi trabajo se basa en el equilibrio entre la lógica técnica y la estética visual. Aunque me especializo en aplicaciones web con Laravel y React, también soy Artista 3D apasionada por el diseño de personajes y la narrativa.",
+        "Soy estudiante de Multimedia y Animación Digital  (LMAD) en la U.A.N.L. y Desarrolladora Junior Fullstack. Mi trabajo se basa en el equilibrio entre la lógica técnica y la estética visual. Aunque me especializo en aplicaciones web con Laravel y React, también soy Artista 3D apasionada por el diseño de personajes y la narrativa.",
       techTitle: "> tecnologías[]",
       categories: {
         web: "Desarrollo Web",
@@ -60,8 +60,8 @@ export const translations = {
       text: "Estoy abierta a nuevos proyectos, colaboraciones o simplemente una buena conversación. No dudes en contactarme.",
       cardHeader: "> info_de_contacto",
       cta: "di hola →",
-      cv: "Descargar CV"
-    }
+      cv: "Descargar CV",
+    },
   },
   en: {
     nav: {
@@ -117,13 +117,13 @@ export const translations = {
         },
       ],
     },
-   contact: {
+    contact: {
       label: "> let's_work_together()",
       title: "Got an idea?",
       titleBold: "Let's make it real.",
-      text: "I’m open to new projects, collaborations or just a nice conversation. Feel free to reach out.",
+      text: "I’m ope  n to new projects, collaborations or just a nice conversation. Feel free to reach out.",
       cardHeader: "> contact_info",
       cta: "say hi →",
-    }
+    },
   },
 };
