@@ -1,4 +1,6 @@
-export function ProjectCard({ project, onClick }) {
+
+export function ProjectCard({ project, onClick, lang }) {
+  const description = project.description[lang];
   return (
     <div className="project-card" onClick={() => onClick(project)}>
       <div className="project-header">
@@ -12,7 +14,7 @@ export function ProjectCard({ project, onClick }) {
 
       <div className="project-content">
         <h3 className="project-title">{project.title}</h3>
-        <p className="project-description">{project.description}</p>
+        <p className="project-description">{description}</p>
 
         <div className="project-tech">
           {project.tech.map((t, index) => (
@@ -21,8 +23,12 @@ export function ProjectCard({ project, onClick }) {
         </div>
 
         <div className="project-actions">
-          <a href={project.link} className="link-live">view live →</a>
-          <a href={project.repo} className="btn repo">source code</a>
+          <a href={project.link} className="link-live">
+            {lang === "es" ? "ver vivo →" : "view live →"}
+          </a>
+          <a href={project.repo} className="btn repo">
+            {lang === "es" ? "código fuente" : "source code"}
+          </a>
         </div>
       </div>
     </div>

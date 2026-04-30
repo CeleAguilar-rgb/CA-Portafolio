@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-export function Modal({ project, onClose }) {
+export function Modal({ project, onClose, lang }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Bloquear scroll del fondo
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => (document.body.style.overflow = "unset");
@@ -11,7 +10,6 @@ export function Modal({ project, onClose }) {
 
   if (!project) return null;
 
-  // Normalizar media (si no hay array, crear uno con la imagen principal)
   const projectMedia =
     project.media && project.media.length > 0
       ? project.media
@@ -32,6 +30,28 @@ export function Modal({ project, onClose }) {
   };
 
   const current = projectMedia[currentIndex];
+
+  const labels = {
+    es: {
+      challenge: "El Reto",
+      features: "Características",
+      role: "Rol",
+      live: "ver vivo →",
+      repo: "código fuente",
+      year: "Año",
+    },
+    en: {
+      challenge: "The Challenge",
+      features: "Key Features",
+      role: "Role",
+      live: "view live →",
+      repo: "source code",
+      year: "Year",
+    },
+  };
+
+  const t = labels[lang];
+
   return (
     <div
       className="modal-overlay"
@@ -73,8 +93,8 @@ export function Modal({ project, onClose }) {
           <div className="modal-info">
             <div className="info-scroll">
               <h2 className="modal-title">{project.title}</h2>
-              <p className="modal-description">{project.description}</p>
-              
+              <p className="modal-description">{project.description[lang]}</p>
+
               <div className="modal-tech">
                 {project.tech.map((t, i) => (
                   <span key={i} className="tag">
@@ -84,14 +104,14 @@ export function Modal({ project, onClose }) {
               </div>
 
               <div className="info-section challenge-box">
-                <h4>The Challenge</h4>
-                <p>{project.challenge}</p>
+                <h4>{t.challenge}</h4>
+                <p>{project.challenge[lang]}</p>
               </div>
 
               <div className="info-section">
-                <h4>Key Features</h4>
+                <h4>{t.features}</h4>
                 <ul className="features-list">
-                  {project.features?.map((f, i) => (
+                  {project.features[lang]?.map((f, i) => (
                     <li key={i}>{f}</li>
                   ))}
                 </ul>
@@ -99,15 +119,15 @@ export function Modal({ project, onClose }) {
 
               <div className="modal-side">
                 <div className="side-item">
-                  <h4>Role</h4>
-                  <p>{project.role || "Frontend Dev & 3D Artist"}</p>
+                  <h4>{t.role}</h4>
+                  <p>{project.role[lang]  || "Frontend Dev & 3D Artist"}</p>
                 </div>
                 <div className="side-item">
                   <h4>Focus</h4>
-                  <p>{project.focus || "UX, animations, layout system"}</p>
+                  <p>{project.focus[lang] || "UX, animations, layout system"}</p>
                 </div>
                 <div className="side-item">
-                  <h4>Year</h4>
+                  <h4>{t.year}</h4>
                   <p>{project.year || "2025"}</p>
                 </div>
               </div>
@@ -120,7 +140,7 @@ export function Modal({ project, onClose }) {
                 rel="noreferrer"
                 className="modal-live"
               >
-                view live →
+                {t.live}
               </a>
               <a
                 href={project.repo}
@@ -128,7 +148,7 @@ export function Modal({ project, onClose }) {
                 rel="noreferrer"
                 className="modal-repo"
               >
-                source code
+               {t.repo}
               </a>
             </div>
           </div>

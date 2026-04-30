@@ -1,29 +1,31 @@
 import { Reveal } from "./Reveal";
 import { FaGithub, FaLinkedinIn, FaRegFilePdf } from "react-icons/fa";
+import { translations } from "../data/translations.js";
 
-export function Contact() {
+export function Contact({ lang }) {
+
+  const t = translations[lang].contact;
   return (
     <section id="contact" className="contact">
       <Reveal>
         <div className="contact-inner">
           <div className="contact-left">
-            <p className="contact-label">&gt; let's_work_together()</p>
+            <p className="contact-label">{t.label}</p>
 
             <h2 className="contact-title">
-              Got an idea? <br />
-              Let's make it real.
+              {t.title} <br />
+              {t.titleBold}
             </h2>
 
             <p className="contact-text">
-              I’m open to new projects, collaborations or just a nice
-              conversation. Feel free to reach out.
+              {t.text}
             </p>
           </div>
 
           <div className="contact-right">
             <div className="contact-card">
               <div className="contact-card-header">
-                <p>&gt; contact_info</p>
+                <p>{t.cardHeader}</p>
                 <div className="dots">
                   <span></span>
                   <span></span>
@@ -38,7 +40,7 @@ export function Contact() {
                   href="mailto:celeaguilar.la@gmail.com"
                   className="contact-cta"
                 >
-                  say hi →
+                  {t.cta}
                 </a>
 
                 <div className="contact-socials">

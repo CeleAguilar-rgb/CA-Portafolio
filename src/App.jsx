@@ -24,15 +24,16 @@ function App() {
     <>
       <Navbar lang={lang} setLang={setLang} />
       <Hero lang={lang} />
-      <About />
-      <Projects onProjectClick={openModal} />
-      <Contact />
+      <About lang={lang} />
+      <Projects lang={lang} onProjectClick={openModal} />
+      <Contact lang={lang} />
 
       {selectedProject && (
         <Modal
           key="modal-unico"
           project={selectedProject}
           onClose={closeModal}
+          lang={lang}
         />
       )}
     </>
