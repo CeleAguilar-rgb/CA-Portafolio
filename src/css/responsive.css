@@ -1,6 +1,5 @@
 /* ===== TABLET / LAPTOP ===== */
 @media (max-width: 1024px) {
-    
   .nav {
     padding: 1rem 1.5rem;
   }
@@ -17,7 +16,7 @@
   .hero-inner {
     margin-bottom: -2rem;
   }
-   .card h2{
+  .card h2 {
     font-size: 1.6rem;
   }
 }
@@ -69,7 +68,7 @@
     margin: 0 auto 2rem;
   }
 
- .modal {
+  .modal {
     width: 95%;
     height: 90vh;
     max-height: 90vh;
@@ -78,10 +77,10 @@
     grid-template-columns: 1fr;
     display: flex;
     flex-direction: column;
-    overflow-y: auto; 
+    overflow-y: auto;
   }
   .modal-gallery {
-    height: 250px; 
+    height: 250px;
     min-height: 250px;
     border-right: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -99,14 +98,17 @@
     width: 35px;
     height: 35px;
   }
-  
-  .nav-btn.prev { left: 10px; }
-  .nav-btn.next { right: 10px; }
+
+  .nav-btn.prev {
+    left: 10px;
+  }
+  .nav-btn.next {
+    right: 10px;
+  }
 
   .modal-title {
     font-size: 1.5rem;
   }
-
 }
 
 /* ===== PHONES (900px a 650px) ===== */
@@ -115,7 +117,7 @@
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
- 
+
   .about-card {
     flex-direction: column-reverse;
     text-align: center;
@@ -142,5 +144,8 @@
   }
   .hero-title {
     font-size: 2.2rem;
+  }
+  .projects-card h2 {
+    font-size: 1.4rem;
   }
 }

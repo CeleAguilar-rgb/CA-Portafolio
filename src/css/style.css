@@ -719,7 +719,7 @@ a {
 .contact {
   background: var(--bg);
   color: var(--txt);
-  padding: 180px 60px;
+  padding: 200px 60px;
 }
 .contact-inner {
   max-width: 1050px;

@@ -120,11 +120,13 @@ export function Modal({ project, onClose, lang }) {
               <div className="modal-side">
                 <div className="side-item">
                   <h4>{t.role}</h4>
-                  <p>{project.role[lang]  || "Frontend Dev & 3D Artist"}</p>
+                  <p>{project.role[lang] || "Frontend Dev & 3D Artist"}</p>
                 </div>
                 <div className="side-item">
                   <h4>Focus</h4>
-                  <p>{project.focus[lang] || "UX, animations, layout system"}</p>
+                  <p>
+                    {project.focus[lang] || "UX, animations, layout system"}
+                  </p>
                 </div>
                 <div className="side-item">
                   <h4>{t.year}</h4>
@@ -132,25 +134,26 @@ export function Modal({ project, onClose, lang }) {
                 </div>
               </div>
             </div>
-
-            <div className="modal-footer">
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noreferrer"
-                className="modal-live"
-              >
-                {t.live}
-              </a>
-              <a
-                href={project.repo}
-                target="_blank"
-                rel="noreferrer"
-                className="modal-repo"
-              >
-               {t.repo}
-              </a>
-            </div>
+            {(project.link || project.repo) && (
+              <div className="modal-footer">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="modal-live"
+                >
+                  {t.live}
+                </a>
+                <a
+                  href={project.repo}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="modal-repo"
+                >
+                  {t.repo}
+                </a>
+              </div>
+            )}
           </div>
         </div>
       </div>
