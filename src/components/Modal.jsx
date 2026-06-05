@@ -136,6 +136,7 @@ export function Modal({ project, onClose, lang }) {
             </div>
             {(project.link || project.repo) && (
               <div className="modal-footer">
+                 {project.link && (
                 <a
                   href={project.link}
                   target="_blank"
@@ -143,7 +144,8 @@ export function Modal({ project, onClose, lang }) {
                   className="modal-live"
                 >
                   {t.live}
-                </a>
+                </a>)}
+                {project.repo && (
                 <a
                   href={project.repo}
                   target="_blank"
@@ -151,7 +153,7 @@ export function Modal({ project, onClose, lang }) {
                   className="modal-repo"
                 >
                   {t.repo}
-                </a>
+                </a>)}
               </div>
             )}
           </div>
