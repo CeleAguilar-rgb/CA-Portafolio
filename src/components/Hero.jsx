@@ -21,8 +21,8 @@ export function useTypewriter(text, speed = 50) {
   return displayedText;
 }
 
-export function Hero({ lang }) {
-
+export function Hero({ lang, setLang }) {
+  const toggleLanguage = () => setLang(lang === "es" ? "en" : "es");
   const t = translations[lang].hero;
 
   const line1 = useTypewriter(t.monitor.line1, 20);
@@ -33,25 +33,39 @@ export function Hero({ lang }) {
   return (
     <section id="hero" className="hero ">
       <div className="hero-inner">
+        <button onClick={toggleLanguage} className="lang-static-btn">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          <span>{lang === "es" ? "EN" : "ES"}</span>
+        </button>
+
         <Reveal>
           <div className="hero-left">
             <p className="hero-sub">{t.sub}</p>
             <h1 className="hero-title">
-             {t.hi} <span>Cele</span>
+              {t.hi} <span>Cele</span>
             </h1>
-            <h2 className="hero-role">
-             {t.role}
-            </h2>
-            <p className="hero-description">
-           {t.description}
-            </p>
+            <h2 className="hero-role">{t.role}</h2>
+            <p className="hero-description">{t.description}</p>
 
             <div className="hero-buttons">
               <a href="#projects-section" className="btn btn-pri">
-              {t.btnProjects}
+                {t.btnProjects}
               </a>
               <a href="#contact" className="btn btn-out">
-               {t.btnContact}
+                {t.btnContact}
               </a>
             </div>
           </div>

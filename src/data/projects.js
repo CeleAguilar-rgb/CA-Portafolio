@@ -127,7 +127,7 @@ export const projectsData = [
     repo: "https://github.com/WikkArt/PIA_PW2",
   },
 
- /* {
+ {
     id: 4,
     title: "Komorebi",
     role: {
@@ -165,5 +165,5 @@ export const projectsData = [
     media: [{ type: "image", url: "/assets/projects/Komorebi/Kb1.png" }],
     link: "",
     repo: "https://github.com/CeleAguilar-rgb/Komorebi",
-  },*/
+  },
 ];

@@ -22,8 +22,8 @@ function App() {
 
   return (
     <>
-      <Navbar lang={lang} setLang={setLang} />
-      <Hero lang={lang} />
+      <Navbar lang={lang} />
+      <Hero lang={lang} setLang={setLang} />
       <About lang={lang} />
       <Projects lang={lang} onProjectClick={openModal} />
       <Contact lang={lang} />

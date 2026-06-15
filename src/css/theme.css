@@ -19,8 +19,8 @@
   --ft-body: "Nunito", sans-serif;
 
   /* ===== RADIUS ===== */
-  --r-lg: 24px;
-  --r-md: 16px;
+  --r-lg: 30px;
+  --r-md: 20px;
   --r-sm: 10px;
 
   /* ===== TRANSITIONS ===== */
@@ -34,7 +34,6 @@
   --sh-strong: 0 20px 50px rgba(0, 0, 0, 0.2);
   --sh-strong-invert: 0 20px 50px rgba(214, 209, 209, 0.2);
 }
-
 
 /* ===== RESET ===== */
 * {
@@ -55,4 +54,57 @@ body::before {
   opacity: 0.05;
   z-index: 0;
   pointer-events: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* -BUTTONS- */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.3rem;
+  border-radius: var(--r-lg);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--tr);
+}
+
+.btn-pri {
+  border: 2px solid var(--bg);
+  background: var(--bg);
+  color: var(--pri);
+}
+.btn-pri:hover {
+  background: transparent;
+  color: var(--bg);
+  transform: translateY(-2px);
+  box-shadow: var(--sh-soft);
+}
+.btn-pri:active {
+  transform: translateY(0px);
+  box-shadow: none;
+  background: var(--bg);
+  color: var(--pri);
+}
+
+.btn-out {
+  border: 2px solid var(--bg-strong);
+  color: var(--bg-strong);
+  background: transparent;
+}
+.btn-out:hover {
+  border: 2px solid var(--bg);
+  background: var(--bg);
+  color: var(--pri);
+  transform: translateY(-2px);
+  box-shadow: var(--sh-soft);
+}
+.btn-out:active {
+  transform: translateY(0px);
+  box-shadow: none;
+  border: 2px solid var(--bg-strong);
+  color: var(--bg-strong);
+  background: transparent;
 }
